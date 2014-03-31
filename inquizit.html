@@ -1,0 +1,72 @@
+<head>
+  <title>Inquizit</title>
+</head>
+
+<body>
+  <div class="banner">
+    <span><img src="/logo.png" style="height:60%;width:60%;padding-bottom:30px"/></span>
+  </div>
+  <div id="outer" style="padding-top:30px">
+    {{> directory}}
+  </div>
+</body>
+
+<template name="directory">
+  <div class="insertPresentation">
+    <input hidden type='text' id='newPresentationName' placeholder="Add presentation" />
+    <button hidden class="addPresentation">Submit</button>
+  </div>
+  <div class="leaderboard">
+    <div class="container">
+      {{#each presentations}}
+        <div class="row" style="text-align:center; background-color:rgba(192,192,192,.2); margin:5px; border-radius:5px;">
+            {{> presentation}}
+        </div>
+      {{/each}}
+    </div>
+  </div>
+
+  {{#if selectedPresentation}}
+  <div class="details" style="margin: 30px 0; background-color:white;">
+    <div class="row" style="margin: 20px 0;">
+      <div class="col-xs-offset-1 col-xs-7" style="height:30px;">
+        <input type='text' id='newQuestionName' placeholder="Any Questions?" style="width:100%; font-size:large; height:48px; padding-left:10px"/>
+      </div>
+      <div class="col-xs-2">
+        <button class="addQuestion btn btn-primary" style="width:120px">Ask</button>
+      </div>
+    </div>
+    <div class="row">
+
+    </div>
+    {{#each questions}}
+      {{> question}}
+    {{/each}}
+  </div>
+  {{else}}
+  <div class="none" style='text-align:center'>Select a presentation from above</div>
+  {{/if}}
+</template>
+
+<template name="presentation">
+  <div class="player {{selected}}">
+    <span class="name">{{name}}</span>
+  </div>
+</template>
+
+<template name="question">
+  <div class="container">
+      <div style="border-bottom: 1px solid rgba(0,0,0,.075); box-shadow: 0px 1px 0px rgba(255,255,255,.175); padding-bottom:20px;padding-top:20px;" class="row question">
+        <!-- <div class="col-xs-2;" style="display: inline-block;">  
+          {{votes}}
+        </div> -->
+        <div class="col-xs-2" style="display:inline-block;">
+          <button class="upvote btn btn-success" id='{{_id}}' >{{votes}}</button>
+        </div>
+        <div class="col-xs-8 question" style="display:inline-block; padding-top:5px"> 
+          {{question}}
+        </div>
+      </div>
+  </div>
+</template>
+
