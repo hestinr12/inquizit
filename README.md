@@ -1,9 +1,8 @@
-
 This code is from Startup Weekend Pittsburgh #5 and includes all the code to run the Meteorjs application. 
 
 Credit for the logo goes to Al Davis (flippoapp.com), a shout out to Aaron Zhang (thinkero.us) for helping get a lot of this started, and thank you to Steve McCarthy (megabitsapp.com, etc) for helping with the scaffolding the styling.
 
-I'd like the rest of the Inquizit team (James Kong, et al) for having me on board to help them develop their MVP for the Sunday presentation.
+I'd like to thank the rest of the Inquizit team (James Kong, et al) for having me on board to help them develop their MVP for the Sunday presentation.
 
 
 
